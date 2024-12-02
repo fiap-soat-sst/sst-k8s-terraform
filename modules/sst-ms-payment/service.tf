@@ -1,7 +1,7 @@
 resource "kubernetes_service" "payment_api" {
   metadata {
     name      = "payment-api"
-    namespace = kubernetes_namespace.fiap_soat.metadata[0].name
+    namespace = "fiap-soat"
 
     labels = {
       app = "payment-api"
@@ -23,5 +23,5 @@ resource "kubernetes_service" "payment_api" {
     }
   }
 
-  depends_on = [kubernetes_deployment.payment_api, kubernetes_namespace.fiap_soat]
+  depends_on = [kubernetes_deployment.payment_api]
 }

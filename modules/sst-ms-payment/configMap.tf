@@ -1,6 +1,5 @@
 resource "kubernetes_config_map" "payment_env" {
 
-  depends_on = [kubernetes_namespace.fiap_soat]
   metadata {
     name      = "payment-env"
     namespace = "fiap-soat"
