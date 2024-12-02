@@ -5,12 +5,12 @@ resource "kubernetes_secret" "sst_api_secrets" {
   }
 
   data = {
-    DB_DATABASE = var.db_database
-    DB_HOST     = var.db_host
-    DB_PASSWORD = var.db_password
+    DB_DATABASE = var.sst_db_database
+    DB_HOST     = var.sst_db_host
+    DB_PASSWORD = var.sst_db_password
     DB_PORT     = 3306
-    DB_TYPE     = var.db_type
-    DB_USERNAME = var.db_username
+    DB_TYPE     = var.sst_db_type
+    DB_USERNAME = var.sst_db_username
     PORT        = 3000
   }
 
