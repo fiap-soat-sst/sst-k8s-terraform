@@ -1,7 +1,7 @@
 resource "kubernetes_horizontal_pod_autoscaler" "payment_api_hpa" {
   metadata {
     name      = "payment-api-hpa"
-    namespace = kubernetes_namespace.fiap_soat.metadata[0].name
+    namespace = "fiap-soat"
   }
 
   spec {
@@ -16,6 +16,4 @@ resource "kubernetes_horizontal_pod_autoscaler" "payment_api_hpa" {
       name        = kubernetes_deployment.payment_api.metadata[0].name
     }
   }
-
-  depends_on = [kubernetes_namespace.fiap_soat]
 }

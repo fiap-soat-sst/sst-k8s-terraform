@@ -1,6 +1,6 @@
 resource "kubernetes_deployment" "payment_api" {
 
-  depends_on = [kubernetes_namespace.fiap_soat, kubernetes_config_map.payment_env, kubernetes_secret.payment_api_secrets]
+  depends_on = [kubernetes_config_map.payment_env, kubernetes_secret.payment_api_secrets]
 
   metadata {
     name      = "payment-api"
