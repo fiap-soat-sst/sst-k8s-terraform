@@ -30,3 +30,7 @@ module "self_service_totem" {
 module "sst-ms-making" {
   source = "./modules/sst-ms-making"
 }
+
+module "sst-ms-payment" {
+  source = "./modules/sst-ms-payment"
+}
