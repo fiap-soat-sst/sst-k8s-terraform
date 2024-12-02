@@ -1,6 +1,5 @@
 resource "kubernetes_config_map" "mking_env" {
 
-  depends_on = [kubernetes_namespace.fiap_soat]
   metadata {
     name      = "mking-env"
     namespace = "fiap-soat"

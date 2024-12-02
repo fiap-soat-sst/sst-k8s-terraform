@@ -1,7 +1,7 @@
 resource "kubernetes_service" "mking_api" {
   metadata {
     name      = "mking-api"
-    namespace = kubernetes_namespace.fiap_soat.metadata[0].name
+    namespace = "fiap-soat"
 
     labels = {
       app = "mking-api"
@@ -23,5 +23,5 @@ resource "kubernetes_service" "mking_api" {
     }
   }
 
-  depends_on = [kubernetes_deployment.mking_api, kubernetes_namespace.fiap_soat]
+  depends_on = [kubernetes_deployment.mking_api]
 }

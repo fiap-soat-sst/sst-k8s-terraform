@@ -1,5 +1,5 @@
 variable "sst_db_database" {
-  default = "none"
+  default = "self-service-totem"
   type    = string
 }
 
@@ -19,12 +19,12 @@ variable "sst_db_port" {
 }
 
 variable "sst_db_type" {
-  default = "none"
+  default = "mysql"
   type    = string
 }
 
 variable "sst_db_username" {
-  default = "none"
+  default = "sst-manager"
   type    = string
 }
 
