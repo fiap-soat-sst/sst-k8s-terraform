@@ -1,34 +1,34 @@
-variable "db_database" {
+variable "sst_db_database" {
   default = "none"
   type    = string
 }
 
-variable "db_host" {
+variable "sst_db_host" {
   default = "none"
   type    = string
 }
 
-variable "db_password" {
+variable "sst_db_password" {
   default = "none"
   type    = string
 }
 
-variable "db_port" {
+variable "sst_db_port" {
   default = 3306
   type    = number
 }
 
-variable "db_type" {
+variable "sst_db_type" {
   default = "none"
   type    = string
 }
 
-variable "db_username" {
+variable "sst_db_username" {
   default = "none"
   type    = string
 }
 
-variable "port" {
+variable "sst_port" {
   default = 3000
   type    = number
 }
@@ -38,10 +38,45 @@ variable "private_subnets" {
     "10.0.3.0/24",
     "10.0.4.0/24",
   ]
-  type    = list(any)
+  type = list(any)
 }
 
 variable "vpc_id" {
   default = "none"
   type    = string
+}
+
+variable "mking_db_database" {
+  default = "none"
+  type    = string
+}
+
+variable "mking_db_host" {
+  default = "none"
+  type    = string
+}
+
+variable "mking_db_password" {
+  default = "none"
+  type    = string
+}
+
+variable "mking_db_port" {
+  default = 3306
+  type    = number
+}
+
+variable "mking_db_type" {
+  default = "none"
+  type    = string
+}
+
+variable "mking_db_username" {
+  default = "none"
+  type    = string
+}
+
+variable "mking_port" {
+  default = 3125
+  type    = number
 }
