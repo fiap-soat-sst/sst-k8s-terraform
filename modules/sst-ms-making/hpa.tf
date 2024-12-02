@@ -1,7 +1,7 @@
 resource "kubernetes_horizontal_pod_autoscaler" "mking_api_hpa" {
   metadata {
     name      = "mking-api-hpa"
-    namespace = kubernetes_namespace.fiap_soat.metadata[0].name
+    namespace = "fiap-soat"
   }
 
   spec {
@@ -17,5 +17,4 @@ resource "kubernetes_horizontal_pod_autoscaler" "mking_api_hpa" {
     }
   }
 
-  depends_on = [kubernetes_namespace.fiap_soat]
 }

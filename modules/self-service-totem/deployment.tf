@@ -29,7 +29,7 @@ resource "kubernetes_deployment" "sst_api" {
       spec {
         container {
           name  = "sst-api"
-          image = "evilfeeh/self-service-totem:2.1.23"
+          image = "${local.image_name}:${local.image_version}"
 
           env_from {
             secret_ref {
@@ -44,7 +44,7 @@ resource "kubernetes_deployment" "sst_api" {
           }
 
           port {
-            container_port = 3000
+            container_port = local.sst_port
           }
 
           resources {
@@ -62,7 +62,7 @@ resource "kubernetes_deployment" "sst_api" {
           liveness_probe {
             http_get {
               path = "/public/docs"
-              port = 3000
+              port = local.sst_port
             }
 
             period_seconds    = 5
@@ -74,7 +74,7 @@ resource "kubernetes_deployment" "sst_api" {
           readiness_probe {
             http_get {
               path = "/public/docs"
-              port = 3000
+              port = local.sst_port
             }
 
             period_seconds    = 3
@@ -86,31 +86,12 @@ resource "kubernetes_deployment" "sst_api" {
           startup_probe {
             http_get {
               path = "/public/docs"
-              port = 3000
+              port = local.sst_port
             }
 
             period_seconds        = 3
             failure_threshold     = 30
             initial_delay_seconds = 30
-          }
-        }
-
-        init_container {
-          name  = "migrate"
-          image = "evilfeeh/self-service-totem:2.1.23"
-
-          command = ["npm", "run", "migration:up"]
-
-          env_from {
-            secret_ref {
-              name = "sst-api-secrets"
-            }
-          }
-
-          env_from {
-            config_map_ref {
-              name = "sst-env"
-            }
           }
         }
       }

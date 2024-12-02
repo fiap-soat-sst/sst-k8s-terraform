@@ -5,7 +5,6 @@ locals {
   image_version = "latest"
   mking_port = 3125
   
-
   tags = {
     "kubernetes.io/cluster/${local.name}" = "shared"
   } 

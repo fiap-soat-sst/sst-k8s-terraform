@@ -1,7 +1,7 @@
 resource "kubernetes_secret" "mking_api_secrets" {
   metadata {
     name      = "mking-api-secrets"
-    namespace = kubernetes_namespace.fiap_soat.metadata[0].name
+    namespace = "fiap-soat"
   }
 
   data = {
@@ -15,6 +15,4 @@ resource "kubernetes_secret" "mking_api_secrets" {
   }
 
   type = "Opaque"
-
-  depends_on = [kubernetes_namespace.fiap_soat]
 }
