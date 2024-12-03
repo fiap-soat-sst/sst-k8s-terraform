@@ -61,7 +61,7 @@ resource "kubernetes_deployment" "payment_api" {
 
           liveness_probe {
             http_get {
-              path = "/public/docs"
+              path = "/ping"
               port = local.payment_port
             }
 
@@ -73,7 +73,7 @@ resource "kubernetes_deployment" "payment_api" {
 
           readiness_probe {
             http_get {
-              path = "/public/docs"
+              path = "/ping"
               port = local.payment_port
             }
 
@@ -85,7 +85,7 @@ resource "kubernetes_deployment" "payment_api" {
 
           startup_probe {
             http_get {
-              path = "/public/docs"
+              path = "/ping"
               port = local.payment_port
             }
 
