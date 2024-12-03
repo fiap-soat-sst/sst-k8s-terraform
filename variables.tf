@@ -48,7 +48,7 @@ variable "payment_qr_mercado_pago" {
   type    = string
 }
 
-variable "AWS_REGION" {
+variable "aws_region" {
   default = "us-east-1"
   type    = string
 }
@@ -99,6 +99,16 @@ variable "ms_payment_url" {
 }
 
 variable "jwt_secret" {
+  default = "none"
+  type    = string
+}
+
+variable "x_api_key" {
+  default = "none"
+  type    = string
+}
+
+variable "order_service_url" {
   default = "none"
   type    = string
 }

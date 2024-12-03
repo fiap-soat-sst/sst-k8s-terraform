@@ -39,7 +39,10 @@ module "sst-ms-payment" {
   payment_port             = var.payment_port
   payment_notification_url = var.payment_notification_url
   payment_qr_mercado_pago  = var.payment_qr_mercado_pago
-  AWS_REGION               = var.AWS_REGION
+  aws_region               = var.aws_region
+  jwt_secret               = var.jwt_secret
+  x_api_key                = var.x_api_key
+  order_service_url        = var.order_service_url
 }
 
 module "self_service_totem" {
