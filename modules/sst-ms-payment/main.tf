@@ -10,9 +10,3 @@ locals {
     "kubernetes.io/cluster/${local.name}" = "shared"
   } 
 }
-
-
-variable "payment_port" {}
-variable "payment_notification_url" {}
-variable "payment_qr_mercado_pago" {}
-variable "AWS_REGION" {}

@@ -9,11 +9,3 @@ locals {
     "kubernetes.io/cluster/${local.name}" = "shared"
   } 
 }
-
-variable "mking_db_database" {}
-variable "mking_db_host" {}
-variable "mking_db_password" {}
-variable "mking_db_port" {}
-variable "mking_db_type" {}
-variable "mking_db_username" {}
-variable "mking_port" {}

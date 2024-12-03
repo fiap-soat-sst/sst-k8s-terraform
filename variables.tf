@@ -33,8 +33,6 @@ variable "sst_port" {
   type    = number
 }
 
-
-
 variable "payment_port" {
   default = 3225
   type    = number
@@ -54,7 +52,6 @@ variable "AWS_REGION" {
   default = "us-east-1"
   type    = string
 }
-
 
 variable "mking_db_database" {
   default = "none"
