@@ -1,7 +1,7 @@
 resource "kubernetes_service" "sst_api" {
   metadata {
     name      = "sst-api"
-    namespace = kubernetes_namespace.fiap_soat.metadata[0].name
+    namespace = "fiap-soat"
 
     labels = {
       app = "sst-api"

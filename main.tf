@@ -23,17 +23,6 @@ provider "kubernetes" {
   token                  = data.aws_eks_cluster_auth.self_service_totem.token
 }
 
-module "self_service_totem" {
-  source          = "./modules/self-service-totem"
-  sst_db_database = var.sst_db_database
-  sst_db_host     = var.sst_db_host
-  sst_db_password = var.sst_db_password
-  sst_db_port     = var.sst_db_port
-  sst_db_type     = var.sst_db_type
-  sst_db_username = var.sst_db_username
-  sst_port        = var.sst_port
-}
-
 module "sst-ms-making" {
   source            = "./modules/sst-ms-making"
   mking_db_database = var.mking_db_database
@@ -51,4 +40,18 @@ module "sst-ms-payment" {
   payment_notification_url = var.payment_notification_url
   payment_qr_mercado_pago  = var.payment_qr_mercado_pago
   AWS_REGION               = var.AWS_REGION
+}
+
+module "self_service_totem" {
+  source          = "./modules/self-service-totem"
+  sst_db_database = var.sst_db_database
+  sst_db_host     = var.sst_db_host
+  sst_db_password = var.sst_db_password
+  sst_db_port     = var.sst_db_port
+  sst_db_type     = var.sst_db_type
+  sst_db_username = var.sst_db_username
+  sst_port        = var.sst_port
+  ms_making_url   = var.ms_making_url
+  ms_payment_url  = var.ms_payment_url
+  jwt_secret      = var.jwt_secret
 }

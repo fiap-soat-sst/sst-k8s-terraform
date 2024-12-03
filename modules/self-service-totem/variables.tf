@@ -32,3 +32,18 @@ variable "sst_port" {
   default = 3000
   type    = number
 }
+
+variable "ms_making_url" {
+  default = "none"
+  type    = string
+}
+
+variable "ms_payment_url" {
+  default = "none"
+  type    = string
+}
+
+variable "jwt_secret" {
+  default = "none"
+  type    = string
+}
