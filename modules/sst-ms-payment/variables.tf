@@ -18,3 +18,8 @@ variable "AWS_REGION" {
   default = "us-east-1"
   type    = string
 }
+
+variable "jwt_secret" {
+  default = "none"
+  type    = string
+}

@@ -9,6 +9,7 @@ resource "kubernetes_secret" "payment_api_secrets" {
     PORT        = 3001
     NOTIFICATION_URL = var.payment_notification_url
     URL_PAYMENT_QR_MERCADO_PAGO = var.payment_qr_mercado_pago
+    JWT_SECRET = var.jwt_secret
   }
 
   type = "Opaque"
