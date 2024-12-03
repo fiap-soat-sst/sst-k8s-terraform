@@ -91,7 +91,7 @@ resource "kubernetes_deployment" "payment_api" {
 
             period_seconds        = 3
             failure_threshold     = 30
-            initial_delay_seconds = 30
+            initial_delay_seconds = 10
           }
         }
       }
