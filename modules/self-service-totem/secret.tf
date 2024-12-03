@@ -12,8 +12,9 @@ resource "kubernetes_secret" "sst_api_secrets" {
     DB_TYPE     = var.sst_db_type
     DB_USERNAME = var.sst_db_username
     PORT        = 3000
-    MS_MAKING   = var.ms_making_url 
-    MS_PAYMENT  = var.ms_payment_url
+    BASE_URL_MAKING    = var.ms_making_url 
+    BASE_URL_PAYMENT  = var.ms_payment_url
+    JWT_SECRET = var.jwt_secret
   }
 
   type = "Opaque"
