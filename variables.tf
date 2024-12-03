@@ -87,3 +87,18 @@ variable "mking_port" {
   default = 3125
   type    = number
 }
+
+variable "ms_making_url" {
+  default = "none"
+  type    = string
+}
+
+variable "ms_payment_url" {
+  default = "none"
+  type    = string
+}
+
+variable "jwt_secret" {
+  default = "none"
+  type    = string
+}
